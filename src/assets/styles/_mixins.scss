@@ -1,0 +1,24 @@
+@mixin theme() {
+    @each $theme,
+    $map in $themes {
+        // $theme: darkTheme, lightTheme
+        // $map: ('text-color': ..., 'bg-color': ...)
+        $theme-map: $map !global;
+        @if $theme=="lightTheme" {
+            & {
+                @content; // @include theme() {...}
+            }
+        }
+        @else {
+            .#{$theme} & {
+                @content; // @include theme() {...}
+            }
+        }
+    }
+    $theme-map: null !global;
+}
+
+// Function Set Theme
+@function theme-get($key) {
+    @return map-get($theme-map, $key);
+}

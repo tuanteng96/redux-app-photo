@@ -16,7 +16,6 @@ function App() {
             <Route path="/photos" component={Photo} />
             <Route component={NotFound} />
           </Switch>
-
         </BrowserRouter>
       </Suspense>
     </div>

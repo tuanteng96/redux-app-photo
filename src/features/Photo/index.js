@@ -13,7 +13,7 @@ function Photo(props) {
 
     return (
         <Switch>
-            <Route ></Route>
+            <Route></Route>
         </Switch>
     );
 }

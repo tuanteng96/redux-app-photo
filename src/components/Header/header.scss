@@ -1,0 +1,22 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    &-box {
+        display: flex;
+        &__logo {
+            display: flex;
+            align-items: center;
+            h2 {
+                margin: 0;
+                a {
+                    @include theme() {
+                        color: theme-get('text-color');
+                    }
+                }
+            }
+        }
+    }
+}
