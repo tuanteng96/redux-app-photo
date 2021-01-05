@@ -6,14 +6,50 @@
     z-index: 1001;
     &-box {
         display: flex;
+        align-items: center;
         &__logo {
             display: flex;
             align-items: center;
+            width: 300px;
             h2 {
                 margin: 0;
                 a {
                     @include theme() {
                         color: theme-get('text-color');
+                    }
+                }
+            }
+        }
+        &__search {
+            width: calc(100% - 444px);
+        }
+        &__section {
+            width: 144px;
+            ul {
+                margin: 0;
+                display: flex;
+                li {
+                    a {
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                        @include theme() {
+                            color: theme-get('text-icon');
+                        }
+                        i {
+                            font-size: 20px;
+                        }
+                    }
+                    &.user {
+                        img {
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 100%;
+                        }
                     }
                 }
             }

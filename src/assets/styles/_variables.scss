@@ -33,4 +33,4 @@ $warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-900 !default;
-$themes: ( darkTheme: ( 'text-color': $white, 'bg-color': $white), lightTheme: ( 'text-color': $black, 'bg-color': $gray-200));
+$themes: ( darkTheme: ( 'text-color': $white, 'text-icon': $gray-400, 'bg-color': $white), lightTheme: ( 'text-color': $black, 'text-icon': $gray-700, 'bg-color': $gray-200));

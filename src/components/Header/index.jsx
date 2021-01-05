@@ -45,11 +45,11 @@ function Header(props) {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/">
+                                <Link to="/photos/add">
                                     <i className="fal fa-plus"></i>
                                 </Link>
                             </li>
-                            <li>
+                            <li className="user">
                                 <Link to="/">
                                     <img src={avatar} alt="avatar"/>
                                 </Link>
