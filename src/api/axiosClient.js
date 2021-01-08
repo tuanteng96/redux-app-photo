@@ -5,12 +5,18 @@ import queryString from 'query-string';
 const axiosClient = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     headers: {
-        'content-type': 'application/json',
+        'content-type': 'application/json', //application/x-www-form-urlencoded
+        'Accept': 'application/json'
     },
     paramsSerializer: params => queryString.stringify(params),
 });
 axiosClient.interceptors.request.use(async(config) => {
     // Handle token here ...
+    const token = localStorage.getItem('token');
+    if (token) {
+        //config.headers.Authorization = `Token ${token}`;
+    }
+
     return config;
 })
 axiosClient.interceptors.response.use((response) => {

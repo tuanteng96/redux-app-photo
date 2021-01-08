@@ -1,14 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { Container } from 'reactstrap';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import avatar from "../../assets/images/avatar.jpg";
+import { logoutSuccess } from '../../features/User/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import UserApi from '../../api/userApi';
 
 // Header.propTypes = {
     
 // };
 
 function Header(props) {
+
+    const dispatch = useDispatch();
+    const handleLogout = () => {
+
+        const logout = () => async dispatch => {
+            try {
+                // const res = await UserApi.logout({
+                //     USN: "0971021196",
+                //     PWD: "1234",
+                //     cmd: "logout"
+                // });
+                return dispatch(logoutSuccess())
+            } catch (e) {
+                return console.error(e.message);
+            }
+        }
+        dispatch(logout());
+    }
+    
+
     return (
         <header className="header">
             <Container className="themed-container" fluid={true}>
@@ -50,9 +73,9 @@ function Header(props) {
                                 </Link>
                             </li>
                             <li className="user">
-                                <Link to="/">
+                                <div className="user-avatar" onClick={handleLogout}>
                                     <img src={avatar} alt="avatar"/>
-                                </Link>
+                                </div>
                             </li>
                         </ul>
                     </div>
